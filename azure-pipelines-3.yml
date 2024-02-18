@@ -32,3 +32,11 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Pay-As-You-Go(afc6eb08-c907-4ffa-9778-3de7391c2d4b)'
+    appType: 'webAppLinux'
+    WebAppName: 'sandeepsharma11'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'JAVA|11-java11'
